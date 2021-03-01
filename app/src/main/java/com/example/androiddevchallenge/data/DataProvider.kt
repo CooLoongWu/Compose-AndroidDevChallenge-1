@@ -10,7 +10,7 @@ object DataProvider {
             R.drawable.ic_term_01,
             R.drawable.ic_details_01,
             "立春",
-            "Start of Spring",
+            "Spring Begins",
             "",
             "(1st solar term) Feb.3,4, or 5"
         ),
@@ -19,7 +19,7 @@ object DataProvider {
             R.drawable.ic_term_02,
             R.drawable.ic_details_02,
             "雨水",
-            "Rain Water",
+            "More Rain Than Snow",
             "",
             "(2nd solar term) Feb.18,19 or 20"
         ),
@@ -28,7 +28,7 @@ object DataProvider {
             R.drawable.ic_term_03,
             R.drawable.ic_details_03,
             "惊蛰",
-            "the Waking of Insects",
+            "Hibernating Insects Awaken",
             "",
             "(3rd solar term) Mar.5,6, or 7"
         ),
@@ -37,7 +37,7 @@ object DataProvider {
             R.drawable.ic_term_04,
             R.drawable.ic_details_04,
             "春分",
-            "Spring Equinox",
+            "Spring Center",
             "",
             "(4th solar term) Mar.20,21 or 22"
         ),
@@ -46,7 +46,7 @@ object DataProvider {
             R.drawable.ic_term_05,
             R.drawable.ic_details_05,
             "清明",
-            "Pure Brightness",
+            "Clear and Bright",
             "",
             "(5th solar term) Apr.4,5 or 6"
         ),
@@ -55,7 +55,7 @@ object DataProvider {
             R.drawable.ic_term_06,
             R.drawable.ic_details_06,
             "谷雨",
-            "Grain Rain",
+            "Wheat Rain",
             "",
             "(6th solar term) Apr.19,20 or 21"
         ),
@@ -65,7 +65,7 @@ object DataProvider {
             R.drawable.ic_term_07,
             R.drawable.ic_details_07,
             "立夏",
-            "Start of Summer",
+            "Summer Begins",
             "",
             "(7th solar term) May 5,6 or 7"
         ),
@@ -74,7 +74,7 @@ object DataProvider {
             R.drawable.ic_term_08,
             R.drawable.ic_details_08,
             "小满",
-            "Grain Buds",
+            "Creatures Plenish",
             "",
             "(8th solar term) May 20,21 or 22"
         ),
@@ -83,7 +83,7 @@ object DataProvider {
             R.drawable.ic_term_09,
             R.drawable.ic_details_09,
             "芒种",
-            "Grain in Ear",
+            "Seeding Millet",
             "",
             "(9th solar term) Jun.5,6 or 7"
         ),
@@ -92,7 +92,7 @@ object DataProvider {
             R.drawable.ic_term_10,
             R.drawable.ic_details_10,
             "夏至",
-            "Summer Solstice",
+            "Summer Maximum",
             "",
             "(10th solar term) Jun.21 or 22"
         ),
@@ -101,7 +101,7 @@ object DataProvider {
             R.drawable.ic_term_11,
             R.drawable.ic_details_11,
             "小暑",
-            "Minor Heat",
+            "A bit Sweltering",
             "",
             "(11th solar term) Jul.6,7 or 8"
         ),
@@ -110,7 +110,7 @@ object DataProvider {
             R.drawable.ic_term_12,
             R.drawable.ic_details_12,
             "大暑",
-            "Major Heat",
+            "Most Sweltering",
             "",
             "(12th solar term) Jul.22,23 or 24"
         ),
@@ -120,7 +120,7 @@ object DataProvider {
             R.drawable.ic_term_13,
             R.drawable.ic_details_13,
             "立秋",
-            "Start of Autumn",
+            "Autumn Begins",
             "",
             "(13th solar term) Aug.7,8 or 9"
         ),
@@ -129,7 +129,7 @@ object DataProvider {
             R.drawable.ic_term_14,
             R.drawable.ic_details_14,
             "处暑",
-            "End of Heat",
+            "Heat Withdraws",
             "",
             "(14th solar term) Aug.22,23 or 24"
         ),
@@ -138,7 +138,7 @@ object DataProvider {
             R.drawable.ic_term_15,
             R.drawable.ic_details_15,
             "白露",
-            "White Dew",
+            "Dews",
             "",
             "(15th solar term) Sep.7,8 or 9"
         ),
@@ -147,7 +147,7 @@ object DataProvider {
             R.drawable.ic_term_16,
             R.drawable.ic_details_16,
             "秋分",
-            "Autumn Equinox",
+            "Autumn Center",
             "",
             "(16th solar term) Sep.22,23 or 24"
         ),
@@ -156,7 +156,7 @@ object DataProvider {
             R.drawable.ic_term_17,
             R.drawable.ic_details_17,
             "寒露",
-            "Cold Dew",
+            "Cold Dews",
             "",
             "(17th solar term) Oct.8 or 9"
         ),
@@ -165,7 +165,7 @@ object DataProvider {
             R.drawable.ic_term_18,
             R.drawable.ic_details_18,
             "霜降",
-            "Frost Descent",
+            "Frost",
             "",
             "(18th solar term) Oct.23 or 24"
         ),
@@ -175,7 +175,7 @@ object DataProvider {
             R.drawable.ic_term_19,
             R.drawable.ic_details_19,
             "立冬",
-            "Start of Winter",
+            "Winter Begins",
             "",
             "(19th solar term) Nov.7 or 8"
         ),
@@ -184,7 +184,7 @@ object DataProvider {
             R.drawable.ic_term_20,
             R.drawable.ic_details_20,
             "小雪",
-            "Minor Snow",
+            "Snows a bit",
             "",
             "(20th solar term) Nov.22 or 23"
         ),
@@ -193,7 +193,7 @@ object DataProvider {
             R.drawable.ic_term_21,
             R.drawable.ic_details_21,
             "大雪",
-            "Major Snow",
+            "Snows a lot",
             "",
             "(21st solar term) Dec.6,7 or 8"
         ),
@@ -202,7 +202,7 @@ object DataProvider {
             R.drawable.ic_term_22,
             R.drawable.ic_details_22,
             "冬至",
-            "Winter Solstice",
+            "Winter Maximum",
             "",
             "(22nd solar term) Dec.21,22 or 23"
         ),
@@ -211,7 +211,7 @@ object DataProvider {
             R.drawable.ic_term_23,
             R.drawable.ic_details_23,
             "小寒",
-            "Minor Cold",
+            "A bit Frigid",
             "",
             "(23rd solar term) Jan.5,6 or 7"
         ),
@@ -220,7 +220,7 @@ object DataProvider {
             R.drawable.ic_term_24,
             R.drawable.ic_details_24,
             "大寒",
-            "Major Cold",
+            "Most Frigid",
             "",
             "(24th solar term) Jan.20 or 21"
         ),

@@ -15,11 +15,13 @@
  */
 package com.example.androiddevchallenge
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -28,35 +30,46 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.Observer
+import com.blankj.utilcode.util.BarUtils
 import com.example.androiddevchallenge.data.DataProvider
 import com.example.androiddevchallenge.data.SolarTerm
 import com.example.androiddevchallenge.ui.theme.MyTheme
 
 class MainActivity : AppCompatActivity() {
+
+    private val vm = viewModels<MainViewModel>()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        BarUtil.execStatusBarTranslucent(this)
+        BarUtils.transparentStatusBar(this)
+        BarUtils.setStatusBarLightMode(this, true)
 
         setContent {
             MyTheme {
-                MyApp()
+                MyApp(vm.value)
             }
         }
+
+        vm.value.navigation.observe(this, Observer {
+            val intent = Intent(this, DetailsActivity::class.java)
+            intent.putExtra("index", it.index)
+            startActivity(intent)
+        })
     }
 }
 
+//https://en.wikipedia.org/wiki/Solar_term
+
 // Start building your app here!
 @Composable
-fun MyApp() {
+fun MyApp(vm: MainViewModel) {
     Surface(color = MaterialTheme.colors.background) {
         Column {
             Spacer(modifier = Modifier.height(32.dp))
@@ -75,35 +88,41 @@ fun MyApp() {
                     }
 
                     items(DataProvider.solarTermList) {
-                        TermsItem(term = it)
+                        TermsItem(
+                            term = it,
+                            vm = vm,
+                        )
                     }
                 })
         }
     }
 }
 
-@Preview("Light Theme", widthDp = 360, heightDp = 640)
-@Composable
-fun LightPreview() {
-    MyTheme {
-        MyApp()
-    }
-}
+//@Preview("Light Theme", widthDp = 360, heightDp = 640)
+//@Composable
+//fun LightPreview() {
+//    MyTheme {
+//        MyApp()
+//    }
+//}
+//
+//@Preview("Dark Theme", widthDp = 360, heightDp = 640)
+//@Composable
+//fun DarkPreview() {
+//    MyTheme(darkTheme = true) {
+//        MyApp()
+//    }
+//}
 
-@Preview("Dark Theme", widthDp = 360, heightDp = 640)
 @Composable
-fun DarkPreview() {
-    MyTheme(darkTheme = true) {
-        MyApp()
-    }
-}
-
-@Composable
-fun TermsItem(term: SolarTerm) {
+fun TermsItem(term: SolarTerm, vm: MainViewModel) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
             .height(88.dp)
+            .clickable {
+                vm.navigation.value = term
+            }
     ) {
         Image(
             painter = painterResource(id = term.termRes),
