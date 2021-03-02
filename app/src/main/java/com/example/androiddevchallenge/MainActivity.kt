@@ -17,13 +17,21 @@ package com.example.androiddevchallenge
 
 import android.content.Intent
 import android.os.Bundle
-import android.provider.ContactsContract
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.MaterialTheme
@@ -60,15 +68,18 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        vm.value.navigation.observe(this, Observer {
-            val intent = Intent(this, DetailsActivity::class.java)
-            intent.putExtra("index", it.index)
-            startActivity(intent)
-        })
+        vm.value.navigation.observe(
+            this,
+            Observer {
+                val intent = Intent(this, DetailsActivity::class.java)
+                intent.putExtra("index", it.index)
+                startActivity(intent)
+            }
+        )
     }
 }
 
-//https://en.wikipedia.org/wiki/Solar_term
+// https://en.wikipedia.org/wiki/Solar_term
 
 // Start building your app here!
 @Composable
@@ -104,7 +115,8 @@ fun MyApp(vm: MainViewModel) {
                             vm = vm,
                         )
                     }
-                })
+                }
+            )
         }
     }
 }
