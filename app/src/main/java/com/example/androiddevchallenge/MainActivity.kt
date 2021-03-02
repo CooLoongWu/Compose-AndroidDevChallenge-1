@@ -17,6 +17,7 @@ package com.example.androiddevchallenge
 
 import android.content.Intent
 import android.os.Bundle
+import android.provider.ContactsContract
 import androidx.activity.compose.setContent
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
@@ -30,9 +31,11 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.Observer
@@ -87,6 +90,14 @@ fun MyApp(vm: MainViewModel) {
                         )
                     }
 
+                    item {
+                        Text(
+                            text = "@麋鹿先生",
+                            color = Color(0xFF68a78c),
+                            modifier = Modifier.padding(horizontal = 16.dp)
+                        )
+                    }
+
                     items(DataProvider.solarTermList) {
                         TermsItem(
                             term = it,
@@ -98,21 +109,27 @@ fun MyApp(vm: MainViewModel) {
     }
 }
 
-//@Preview("Light Theme", widthDp = 360, heightDp = 640)
-//@Composable
-//fun LightPreview() {
-//    MyTheme {
-//        MyApp()
-//    }
-//}
-//
-//@Preview("Dark Theme", widthDp = 360, heightDp = 640)
-//@Composable
-//fun DarkPreview() {
-//    MyTheme(darkTheme = true) {
-//        MyApp()
-//    }
-//}
+@Preview("Light Theme", widthDp = 360, heightDp = 640)
+@Composable
+fun LightPreview() {
+    MyTheme {
+        MyApp(MainViewModel())
+    }
+}
+
+@Preview("Dark Theme", widthDp = 360, heightDp = 640)
+@Composable
+fun DarkPreview() {
+    MyTheme(darkTheme = true) {
+        MyApp(MainViewModel())
+    }
+}
+
+@Preview
+@Composable
+fun TermsItemPreview() {
+    TermsItem(term = DataProvider.solarTermList[0], vm = MainViewModel())
+}
 
 @Composable
 fun TermsItem(term: SolarTerm, vm: MainViewModel) {
